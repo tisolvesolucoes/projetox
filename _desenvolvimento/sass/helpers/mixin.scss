@@ -1,0 +1,55 @@
+@mixin linear-gradient-2-colors($value1,$value2,$porcent1,$porcent2) {
+	background: $value1;
+	background: -moz-linear-gradient(top,  $value1 $porcent1,$value2 $porcent2);
+	background: -webkit-linear-gradient(top,  $value1 $porcent1,$value2 $porcent2);
+	background: linear-gradient(to bottom, $value1 $porcent1, $value2 $porcent2);
+}
+@mixin linear-gradient-3-colors($value1,$value2,$value3,$porcent1,$porcent2,$porcent3) {
+	background: $value1;
+	background: -moz-linear-gradient(top,  $value1 $porcent1, $value2 $porcent2, $value3 $porcent3);
+	background: -webkit-linear-gradient(top,  $value1 $porcent1, $value2 $porcent2, $value3 $porcent3);
+	background: linear-gradient(to bottom,  $value1 $porcent1, $value2 $porcent2, $value3 $porcent3);
+}
+
+@-webkit-keyframes logo-animation-bounce{
+	0% { -webkit-transform: translate(0px, 0px) }
+	20% { -webkit-transform: translate(0px, -30px) }
+	30% { -webkit-transform: translate(0px, 0px) }
+	40% { -webkit-transform: translate(0px, -20px) }
+	50% { -webkit-transform: translate(0px, 0px) }
+	60% { -webkit-transform: translate(0px, -10px) }
+	70% { -webkit-transform: translate(0px, 0px) }
+	75% { -webkit-transform: translate(0px, -5px) }
+	80% { -webkit-transform: translate(0px, 0px) }
+	100% { -webkit-transform: translate(0px, 0px) }  
+}
+
+/*******************************
+		BREAKPOINTS
+*******************************/
+
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (max-width: 1600px) { @content ; }
+	}
+	@else if $point == desktop2 {
+		@media (max-width: 1200px) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (max-width: 992px) { @content ; }
+	}
+	@else if $point == col-aside {
+		@media (max-width: 900px) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (max-width: 768px) { @content ; }
+	}
+	@else if $point == mobile {
+		@media (max-width: 400px) { @content ; }
+	}
+}
+
+
+@mixin shadow-aside($val1,$val2,$val3,$color){
+	box-shadow: $val1 $val2 $val3 $color;
+}

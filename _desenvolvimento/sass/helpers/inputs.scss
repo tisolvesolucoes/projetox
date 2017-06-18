@@ -1,0 +1,90 @@
+input{
+	display: inline-block;
+	padding: 7px 7px 7px 17px;
+	border-radius: 2px;
+	background-color: $white-bgcolor;
+	background-image: none;
+	border: 1px solid $gray-006-bgcolor;
+	outline: none;
+}
+select{
+	display: inline-block;
+    padding: 5px 3px;
+    color: $gray-005-bgcolor;
+    @include linear-gradient-2-colors($white-bgcolor, $gray-006-bgcolor, 30%, 100%);
+    border: 1px solid $gray-006-bgcolor;
+    border-radius: 2px;
+    outline: none;
+    // -moz-appearance: none;
+	// -webkit-appearance: none;
+ 	// background-image: url(../../content/images/drop-down.svg);
+	// background-repeat: no-repeat;
+    // background-size: 14px;
+    // background-position: 99.5% 50%;
+	overflow: auto;
+    &:focus{
+		box-shadow: 0px 0px 5px $default-bgcolor;
+		outline: none;
+		transition: all 0.5s;
+	}
+}
+
+textarea{
+	display: block;
+	padding: 5px;
+	border-radius: 4px;
+	background-color: $white-bgcolor;
+	background-image: none;
+	border: 1px solid $gray-006-bgcolor;
+	outline: none;
+	resize: none;
+	&:focus{
+		box-shadow: 0px 0px 5px $default-bgcolor;
+		transition: all 0.5s;
+	}
+}
+
+input[type='email']:focus{
+	box-shadow: 0px 0px 5px $default-bgcolor;
+	outline: none;
+	transition: all 0.5s;
+}
+
+input[type='text']:focus{
+	box-shadow: 0px 0px 5px $default-bgcolor;
+	outline: none;
+	transition: all 0.5s;
+}
+
+input[type='password']:focus{
+	box-shadow: 0px 0px 5px $default-bgcolor;
+	outline: none;
+	transition: all 0.5s;
+}
+input[type='button']:focus{
+	box-shadow: none;
+	outline: none;
+	transition: all 0.5s;
+}
+
+.align-radio{
+	label{
+	    display: inline-block !important;
+	}
+	input{
+		display: inline-block !important;
+		position: relative;
+    	top: 2px;
+	}
+}
+
+.align-icons-input{
+	color: #868686;
+    position: absolute;
+    margin: 8px 4px;
+}
+
+input:disabled{
+	background-color: #c7c7c7;
+	color: #8e8e8e;
+}

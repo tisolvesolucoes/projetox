@@ -1,0 +1,109 @@
+.btn {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    $white-bgcolor: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: none;
+    border-radius: 2px;
+}
+
+.btn-default {
+    color: $gray-003-bgcolor;
+    background-color: $gray-000-bgcolor;
+    transition: all 0.5s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $gray-004-bgcolor;
+	}
+	&:active {
+		background-color: $white-bgcolor;
+	}
+}
+
+.btn-primary {
+    color: $white-bgcolor;
+    background-color: $default-bgcolor;
+    transition: all 0.1s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $blue-002-bgcolor;
+	}
+	&:active {
+		background-color: $blue-002-bgcolor;
+	}
+}
+
+.btn-success {
+    color: $white-bgcolor;
+    background-color: $green-002-bgcolor;
+    transition: all 0.1s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $green-003-bgcolor;
+	}
+	&:active {
+		background-color: $green-002-bgcolor;
+	}
+}
+
+.btn-info {
+    color: $white-bgcolor;
+    background-color: $blue-002-bgcolor;
+    transition: all 0.1s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $blue-001-bgcolor;
+	}
+	&:active {
+		background-color: $blue-001-bgcolor;
+	}
+}
+ 
+.btn-warning {
+    color: $white-bgcolor;
+    background-color: $orange-003-bgcolor;
+    transition: all 0.1s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $orange-002-bgcolor;
+	}
+	&:active {
+		background-color: $orange-003-bgcolor;
+	}
+}
+
+.btn-danger {
+    color: $white-bgcolor;
+    background-color: $red-002-bgcolor;
+    transition: all 0.1s;
+    border-color: $gray-006-bgcolor;
+    outline: none;
+    &:hover {
+		background-color: $red-003-bgcolor;
+	}
+	&:active {
+		background-color: $red-001-bgcolor;
+	}
+}
+
+.align-icons-button{
+	margin-right: 5px;
+}

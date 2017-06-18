@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "rootDir": "app",
+    "outDir": "dist"
+    /*"strictNullChecks": true,
+    "watch": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "diagnostics": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "suppressExcessPropertyErrors": false*/
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
+}

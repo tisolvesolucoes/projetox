@@ -1,0 +1,2 @@
+"use strict";var client=io.connect("http://localhost:3001/");define(["app"],function(app){app.controller("mudarSenhaCtrl",function($scope,$rootScope,$location){$rootScope.loading=!0,$rootScope.ischecked=!1,$rootScope.reload(),$rootScope.questionaSessao("mudarSenha"),$rootScope.loading=!1})});
+//# sourceMappingURL=mudarSenha.js.map

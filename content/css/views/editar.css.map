@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "editar.css",
+	"sources": [
+		"../../../_desenvolvimento/sass/views/editar.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

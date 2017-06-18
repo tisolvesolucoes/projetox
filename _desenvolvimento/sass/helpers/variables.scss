@@ -1,0 +1,47 @@
+/*****************************
+		COLORS 
+*****************************/
+
+
+$default-bgcolor:    #00A9F8;
+
+$white-bgcolor:      #ffffff;
+$black-bgcolor:      #000000;
+
+$gray-006-bgcolor:   #dedede;
+$gray-005-bgcolor:   #222222;
+$gray-004-bgcolor:   #333333;
+$gray-003-bgcolor:   #555555;
+$gray-002-bgcolor:   #a7a7a7;
+$gray-001-bgcolor:   #cccccc;
+$gray-000-bgcolor:   #f5f5f5;
+
+$green-002-bgcolor:  #009541; 
+$green-003-bgcolor:  #005C28;
+$green-001-bgcolor:  #39B971;
+
+$yellow-001-bgcolor: #FFB800;
+
+$blue-002-bgcolor:   #0075AD;
+$blue-003-bgcolor:   #005A85;
+$blue-001-bgcolor:   #30B9FC;
+$blue-000-bgcolor:   #e8f1fa;
+
+$orange-002-bgcolor: #FF8900;
+$orange-003-bgcolor: #9B5300;
+$orange-001-bgcolor: #FFB764;
+
+$red-002-bgcolor:    #FF3500;
+$red-003-bgcolor:    #9B2000;
+$red-001-bgcolor:    #FF8464;
+
+$pink-001-bgcolor:   #ffe9e5;
+$pink-003-bgcolor:   #ffa899;
+$pink-002-bgcolor:   #ffbeb2;
+
+/*******************************
+             
+*******************************/
+
+*::selection{ background-color: $red-001-bgcolor; color: $white-bgcolor; }
+

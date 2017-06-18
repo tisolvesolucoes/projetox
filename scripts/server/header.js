@@ -1,0 +1,2 @@
+"use strict";function header(valor){valor.on("session",function(data,callback){new dados.selecionarSessao(valor,data)})}Object.defineProperty(exports,"__esModule",{value:!0});var dados=require("./dados");exports.header=header;
+//# sourceMappingURL=header.js.map

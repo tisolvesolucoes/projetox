@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "perfil.css",
+	"sources": [
+		"../../../_desenvolvimento/sass/views/perfil.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

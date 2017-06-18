@@ -1,0 +1,45 @@
+---- GERAL
+upload imagem perfil, rever
+mudar o username dá problema, rever
+mostrar alert de susseco
+
+---- ENDEREÇO
+mudar para select o campo região, rever
+numero do endereço deve funcionar, sem ter que mudar de campo, rever
+mostrar alert de susseco
+
+---- EMAIL
+ao dicionar um email e tentar denovo sem salvar, derruba o server
+mostrar alert de susseco
+
+---- MIDIASOCIAL
+mostrar alert de susseco
+
+---- TOCO
+mostrar alert de susseco
+
+---- CURTO TOCAR
+mostrar alert de susseco
+
+---- ENVIA MUSICAS
+colocar limite de musicas
+rever mensages
+
+---- ENVIA VIDEOS
+colocar limite de videos
+
+---- ENVIA VIDEO
+validação no formulário (titulo video)
+
+---- ENVIA ANUNCIO
+colocar limite de anuncios
+mostrar alert de susseco
+
+
+----- OUTROS
+remover console.log
+
+
+----- CHAT
+----- VISITANTE
+----- BUSCA

@@ -1,0 +1,89 @@
+form{
+	margin: 10px 0 50px 0;
+	legend{
+		margin-left: 5px;
+		padding: 0 10px;
+	}
+	label{
+		display: block;
+		input[type=text], input[type=password]{
+			display: block;
+		}
+	}
+	a{
+		color: white;
+        font-size: 10px;
+	}
+	.form-group{
+		margin-bottom: 15px;
+		label{
+			margin-bottom: 5px;
+			display: block;
+		}
+		input{
+			display: block;
+		}
+	}
+	.withou-icon{
+		input{
+			padding: 7px 17px 7px 7px;
+		}
+	}
+	.form-group-flat{
+		display: inline-block;
+	}
+	.checkbox{
+		position: relative;
+		display: block;
+		margin-top: 10px;
+		// margin-bottom: 10px;
+		// input{
+		// 	display: inline-block;
+		// 	max-width: 100%;
+		// 	margin-bottom: 5px;
+		// 	font-weight: 700;
+		// 	top: 2px;
+		// 	position: relative;
+		// }
+	}
+	.radiobox{
+		position: relative;
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		// input{
+		// 	display: inline-block;
+		// 	max-width: 100%;
+		// 	margin-bottom: 5px;
+		// 	font-weight: 700;
+		// 	top: 2px;
+		// 	position: relative;
+		// }
+	}
+	.file-input{
+		height: 40px;
+		overflow: hidden;
+		a{
+			cursor: pointer;
+			input{
+				position:absolute;
+				z-index:2;
+				top:0;
+				left:0;
+				filter: alpha(opacity=0);
+				-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+				opacity:0;
+				background-color:transparent;
+				color:transparent;
+			}
+		}
+	}	
+}
+fieldset{
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.error { 
+	border-color: #e83212; 
+	color: #b71d00; 
+	box-shadow: none; }
