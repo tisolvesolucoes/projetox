@@ -295,7 +295,7 @@ define(['app'], function (app) {
                             anuncioPerfil +=    '</select>';
                             
                             anuncioPerfil +=    '<input type="file" id="myFileAnuncio" name="myFileAnuncio" multiple/>';
-                            anuncioPerfil +=    '<input type="submit" value="Upload Video" name="btnformVIDEO" id="btnformVIDEO">';                            
+                            anuncioPerfil +=    '<input type="submit" value="CRIAR ANUNCIO" name="btnformANUNCIO" id="btnformANUNCIO">';                            
                             anuncioPerfil +=    '<span id="status"></span>';
                             anuncioPerfil += '</form>';
                             anuncioPerfil += '<div class="ContentAnunciosLista" id="ContentAnunciosLista" style="display: block"></div>';
@@ -718,7 +718,7 @@ define(['app'], function (app) {
                      * 
                     **********************************************/ 
                     let uploadAnuncio; 
-                    $('#btnformVIDEO').click(function(){
+                    $('#btnformANUNCIO').click(function(){
                         uploadAnuncio = document.getElementById('myFileAnuncio').files[0];
                         
                         acoes.metodos.validaFormAnuncio(uploadAnuncio);
@@ -1101,7 +1101,7 @@ acoes.metodos = {
                             alert(message);
                         }                       
                         else{
-                            alert('deu ruim')
+                            alert('ERRO!')
                         }
                     });
                 }
@@ -1182,7 +1182,7 @@ acoes.metodos = {
                             alert(message);
                         }
                         else{
-                            alert('deu ruim')
+                            alert('ERRO!')
                         }
                     });
                 },500);
