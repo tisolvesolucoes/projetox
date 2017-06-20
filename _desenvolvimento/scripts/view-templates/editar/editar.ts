@@ -80,7 +80,7 @@ define(['app'], function (app) {
                             dadosPessoais +=   "<input type='password' name='senha' id='senha' value='"+message[0][0].Senha+"' />";
                             dadosPessoais += "</label>";
                             dadosPessoais
-                            dadosPessoais += "<label> Aniverário";
+                            dadosPessoais += "<label> Aniversário";
                             dadosPessoais +=   "<select name='dia' id='dia'>";
                             dadosPessoais +=       "<option value='0' selected='1'>Dia</option>";
                             for(var i = 1; i<32; i++){
@@ -223,7 +223,7 @@ define(['app'], function (app) {
                             conteudoInstrumentosQuetoco = $.tmpl("PerfilTemplate_6");
                         //ESTILOS MUSICAIS QUE CURTE
                             estilosQueCurto =  "<form id='formESTILOSMUSICAIS'>";
-                            estilosQueCurto += "<label> Estilos musicias que curto";    
+                            estilosQueCurto += "<label> Estilos musicas que curto";    
                             estilosQueCurto += "<select multiple>"; 
                             estilosQueCurto += "</select>";                        
                             estilosQueCurto += "</label>";
@@ -233,20 +233,20 @@ define(['app'], function (app) {
                             $.template("PerfilTemplate_7", estilosQueCurto); 
                             conteudoEstilosQueCurto = $.tmpl("PerfilTemplate_7");                        
                         //FOTO
-                            fotoPerfi = '<form id="myForm" name="myForm" enctype="multipart/form-data" method="post" onsubmit="return false" >';
+                            fotoPerfi = '<form id="formFoto" name="formFoto" enctype="multipart/form-data" method="post" onsubmit="return false" >';
                             fotoPerfi += '<input type="hidden" id="pasta" value="'+message[0][0].PastasUsuario+'" />';
                             fotoPerfi += '<input type="file" name="myFile" id="myFile" accept=".png, .jpg, .jpeg"/>';
-                            fotoPerfi += '<input type="submit" id="myButton" disabled value="Upload Image" name="submit">';
+                            fotoPerfi += '<input type="submit" id="btnformFOTOPERFIL" disabled value="Upload Image" name="submit">';
                             fotoPerfi += '<span id="status"></span>';
                             fotoPerfi += '</form>';
                             $.template("PerfilTemplate_8", fotoPerfi); 
                             conteudoFotoPerfi = $.tmpl("PerfilTemplate_8");
 
                         //MUSICA
-                            musicaPerfil = '<form id="myForm1" name="myForm1" enctype="multipart/form-data" method="post" onsubmit="return false" >';
+                            musicaPerfil = '<form id="formMUSICA" name="formMUSICA" enctype="multipart/form-data" method="post" onsubmit="return false" >';
                             musicaPerfil += '<input type="text" id="pasta1" value="'+message[0][0].PastasUsuario+'" />';
                             musicaPerfil += '<input type="file" name="myFileMusic" id="myFileMusic" accept=".mp3"/>';
-                            musicaPerfil += '<input type="submit" id="myButton1" value="Upload Musica" name="myButton1">';
+                            musicaPerfil += '<input type="submit" id="btnformMUSICA" value="Upload Musica" name="btnformMUSICA">';
                             musicaPerfil += '<span id="statusMusica"></span>';
                             musicaPerfil += '</form>';
 
@@ -257,10 +257,10 @@ define(['app'], function (app) {
                             $.template("PerfilTemplate_9", musicaPerfil); 
                             conteudoMusicaPerfi = $.tmpl("PerfilTemplate_9");
                         //VIDEO
-                            videoPerfil = '<form id="myForm2" name="myForm2" onsubmit="return false">';
+                            videoPerfil = '<form id="formVIDEO" name="formVIDEO" onsubmit="return false">';
                             videoPerfil += '<input type="text" name="myFileTitle" id="myFileTitle" placeholder="Titulo do video" />';                            
                             videoPerfil += '<input type="text" name="myFileVideo" id="myFileVideo" placeholder="Embed Youtube" />';
-                            videoPerfil += '<input type="submit" id="myButton2" value="Upload Video" name="submit">';
+                            videoPerfil += '<input type="submit" id="btnformVIDEO" value="Upload Video" name="submit">';
                             videoPerfil += '<span id="status"></span>';
                             videoPerfil += '</form>';
 
@@ -272,9 +272,10 @@ define(['app'], function (app) {
                             $.template("PerfilTemplate_10", videoPerfil); 
                             conteudoVideoPerfi = $.tmpl("PerfilTemplate_10");
                         //ANUNCIO
-                            anuncioPerfil = '<form id="myForm3" name="myForm3" enctype="multipart/form-data" method="post" onsubmit="return false">';
+                            anuncioPerfil = '<form id="formANUNCIO" name="formANUNCIO" enctype="multipart/form-data" method="post" onsubmit="return false">';
                             anuncioPerfil +=    '<input type="hidden" id="pastaAnuncios" value="'+message[0][0].PastasUsuario+'" />';
                             anuncioPerfil +=    '<input type="text" name="tituloAnuncio" id="tituloAnuncio" value="" placeholder="Digite o titulo do anuncio" />';
+                            anuncioPerfil +=    '<textarea name="textoAnuncio" id="textoAnuncio" value="" placeholder="Digite uma descrição do anúncio"></textarea>';
                             anuncioPerfil +=    '<select type="text" name="tipoAnuncio" id="tipoAnuncio">';
                             anuncioPerfil +=        '<option value="" class="valid">Selecione o tipo de Anúncio</option>'; 
                                 $.each(message[11], function(key,value)
@@ -292,10 +293,9 @@ define(['app'], function (app) {
                             anuncioPerfil +=       '<option value="região oeste">região oeste</option>';
                             anuncioPerfil +=       '<option value="região central">região central</option>';
                             anuncioPerfil +=    '</select>';
-                            anuncioPerfil +=    '<textarea name="textoAnuncio" id="textoAnuncio" value="" placeholder="Digite o titulo do anuncio"></textarea>';
                             
                             anuncioPerfil +=    '<input type="file" id="myFileAnuncio" name="myFileAnuncio" multiple/>';
-                            anuncioPerfil +=    '<input type="submit" value="Upload Video" name="myButton3" id="myButton3">';                            
+                            anuncioPerfil +=    '<input type="submit" value="Upload Video" name="btnformVIDEO" id="btnformVIDEO">';                            
                             anuncioPerfil +=    '<span id="status"></span>';
                             anuncioPerfil += '</form>';
                             anuncioPerfil += '<div class="ContentAnunciosLista" id="ContentAnunciosLista" style="display: block"></div>';
@@ -363,8 +363,9 @@ define(['app'], function (app) {
                                     
                                     <img src="`+message[12][x].URLs+`" width="100" /> 
                                    
-                                    <input type="text" id="tituloAnuncio" value="`+message[12][x].TitiloAnuncio+`" placeholder="Digite o titulo do video" />                                   
-                                    
+                                    <input type="text" id="tituloAnuncio" value="`+message[12][x].TitiloAnuncio+`" placeholder="Digite o titulo do anuncio" />                                   
+                                    <input type="text" id="textoAnuncio" value="`+message[12][x].TextoAnuncio+`" placeholder="Digite descrição do anuncio" />
+
                                     <select id="tipoAnuncio"></select>
                                     
                                     <select id="estados" class="estados_`+message[12][x].ID+`"></select>
@@ -377,11 +378,9 @@ define(['app'], function (app) {
                                         <option value="região oeste">região oeste</option>
                                         <option value="região central">região central</option>
                                     </select>
-                                    <input type="text" id="textoAnuncio" value="`+message[12][x].TextoAnuncio+`" placeholder="Digite o titulo do video" />
 
-                                    <input type="text" id="Criacao" value="`+message[12][x].DTCriacao+`" placeholder="Digite o titulo do video" />
-                                    <label>data: `+message[12][x].DTAtualizacao+`</label>
-
+                                    <label>Data Criacão: `+message[12][x].DTAtualizacao+`</label>
+                                    <input type="text" id="Criacao" value="`+message[12][x].DTCriacao+`" />
                                     <button onclick="acoes.metodos.removeAnuncios('anuncio_`+message[12][x].ID+`', '`+message[12][x].URLVideo+`')"> Remover </button>
                                     <button onclick="acoes.metodos.updateAnuncios('anuncio_`+message[12][x].ID+`')"> Salvar </button>                                    
                                 </div>`;
@@ -567,67 +566,27 @@ define(['app'], function (app) {
                      * MODULO FOTO PERFIL
                      * 
                     **********************************************/
-                    $('#myButton').on('click', function(){
+                    $('#btnformFOTOPERFIL').on('click', function(){
                         let uploadFotoPerfil = document.getElementById('myFile').files[0];
                         let pasta            = $('#pasta').val();
                         let pic_size         = uploadFotoPerfil.size;
              
                         acoes.metodos.validaFormFotoPerfil(uploadFotoPerfil);
-                        $('#myForm #status').html('carregando..');
+                        $('#formFoto #status').html('carregando..');
 
-                        if($('#myForm').valid()){
+                        if($('#formFoto').valid()){
                            
                             if(pic_size >= 10000000){
                                 alert('grande');
                                 $('#status').html('');
                                 $('#myFile').val('');
-                                $('#myButton').prop('disabled', true);
+                                $('#btnformFOTOPERFIL').prop('disabled', true);
                             }
                             else{                         
                                 client.emit('envia_foto_perfil', {pasta: pasta, imagem: uploadFotoPerfil, userlogado:$.jStorage.get("key")}, function(message, key){ });
-                                $('#myButton').prop('disabled', true);
+                                $('#btnformFOTOPERFIL').prop('disabled', true);
                             }
-                        }
-                        // let form = document.forms.namedItem("myForm");
-                            // let pasta = $('#pasta').val();
-                            // let pic_size = $('#myFile')[0].files[0].size;
-                            
-                            // if($('#myFile').val() == ''){
-                            //     alert('O campo está vazio');
-                            //     $('#status').html('');
-                            //     $('#myFile').val('');
-                            //     $('#myButton').prop('disabled', true);
-                            // }
-                            // else if(pic_size >= 10000000){
-                            //     alert('grande');
-                            //     $('#status').html('');
-                            //     $('#myFile').val('');
-                            //     $('#myButton').prop('disabled', true);
-                            // }
-                            // else{
-                            //     form.addEventListener('submit', function(ev) {
-                            //         var myFile = document.getElementById('myFile').files[0];             
-                                    
-                            //         var oData = new FormData(form);
-                            //         var oReq = new XMLHttpRequest();
-                            //         oReq.open('POST', '/api/photo', true);
-                                            
-                            //         client.emit('envia_foto_perfil', {pasta: pasta, userlogado:$.jStorage.get("key")}, function(message, key){ });                            
-                                    
-                            //         oReq.onload = function(oEvent){
-                            //             if(oReq.status == 200){
-                            //                 $('#status').html('carregando..');                                      
-                            //             }
-                            //             else
-                            //             {
-                            //                 $('#status').html('carregando..1');
-                            //             }
-                            //         };
-                            
-                            //         oReq.send(oData);
-                            //         ev.preventDefault();
-                            //     }, false);
-                        // }                         
+                        }                  
                     });  
 
                     client.on('retornoFile', function(message){
@@ -636,30 +595,30 @@ define(['app'], function (app) {
                                 alert(message);
                                 $('#status').html('');
                                 $('#myFile').val('');
-                                $('#myButton').prop('disabled', true);
+                                $('#btnformFOTOPERFIL').prop('disabled', true);
                             }
                             else{
                                 $('#status').html('');
                                 $('#myFile').val('');
-                                $('#myButton').prop('disabled', true);
+                                $('#btnformFOTOPERFIL').prop('disabled', true);
                                 $('#imagePerfil').attr('src', message);
                             }                                
                         },1500);
                     }); 
 
                     $('#myFile').change(function(){
-                        $('#myButton').prop('disabled', false);
+                        $('#btnformFOTOPERFIL').prop('disabled', false);
                     }); 
                     /**********************************************
                      *
                      * MODULO MUSICAS
                      * 
                     **********************************************/ 
-                    $('#myButton1').on('click', function(){
+                    $('#btnformMUSICA').on('click', function(){
                         let input = $('#myFileMusic').val();
                         
                         if(input != ''){
-                            let form = document.forms.namedItem("myForm1");                                           
+                            let form = document.forms.namedItem("formMUSICA");                                           
                             let pasta = $('#pasta1').val();
                             let audio = document.getElementById('myFileMusic').files[0]; 
 
@@ -710,7 +669,7 @@ define(['app'], function (app) {
                      * MODULO VIDEOS
                      * 
                     **********************************************/ 
-                    $('#myForm2').submit(function(event){
+                    $('#formVIDEO').submit(function(event){
                         var inputTitle = $('#myFileTitle').val();
                         var inputVideos   = $('#myFileVideo').val();
                         inputVideos = inputVideos.split('&')[0];         
@@ -759,17 +718,17 @@ define(['app'], function (app) {
                      * 
                     **********************************************/ 
                     let uploadAnuncio; 
-                    $('#myButton3').click(function(){
+                    $('#btnformVIDEO').click(function(){
                         uploadAnuncio = document.getElementById('myFileAnuncio').files[0];
                         
                         acoes.metodos.validaFormAnuncio(uploadAnuncio);
-                        if($('#myForm3').valid()){
+                        if($('#formANUNCIO').valid()){
                             let frm_titulo        = $("#tituloAnuncio").val();
+                            let frm_textoAnuncio  = $("#textoAnuncio").val();
                             let frm_tipoAnuncio   = $("#tipoAnuncio").val();
                             let frm_estados       = $("#estados").val(); 
                             let frm_cidades       = $("#cidades").val(); 
                             let frm_regiaoAnuncio = $("#regiaoAnuncio").val();
-                            let frm_textoAnuncio  = $("#textoAnuncio").val();
                             let frm_pasta  = $('#pastaAnuncios').val();
 
                             client.emit('anuncios', { 
@@ -784,13 +743,13 @@ define(['app'], function (app) {
                                 inputFile: uploadAnuncio
                             }, function(eventName, message, key){
                                 if(eventName === "success"){
-                                    alert('deu certo')
+                                    alert('CONCLUIDO COM SUCESSO!')
                                 }
                                 else if(eventName === '1'){
                                     alert(message);
                                 }
                                 else{
-                                    alert('deu ruim')
+                                    alert('ERRO!')
                                 }
                             });
                         }                 
@@ -810,8 +769,10 @@ define(['app'], function (app) {
                                                     
                                     $('#ContentAnunciosLista').append(`<div id="anuncio_`+message[0][i].ID+`" style="display: block !important">
                                         <img src="`+message[0][i].URLs+`" width="100" />                                     
-                                        <input type="text" id="tituloAnuncio" value="`+message[0][i].TitiloAnuncio+`" placeholder="Digite o titulo do video" />
-                                        
+                                        <input type="text" id="tituloAnuncio" value="`+message[0][i].TitiloAnuncio+`" placeholder="Digite o titulo do anuncio" />
+
+                                        <input type="text" id="textoAnuncio" value="`+message[0][i].TextoAnuncio+`" placeholder="Digite descricao do anuncio" />
+                                                                                
                                         <select id="tipoAnuncio"></select>
 
                                         <select id="estados" class="estados_`+message[0][i].ID+`"></select>
@@ -826,8 +787,6 @@ define(['app'], function (app) {
                                             <option value="região central">região central</option>
                                         </select>
 
-                                        <input type="text" id="textoAnuncio" value="`+message[0][i].TextoAnuncio+`" placeholder="Digite o titulo do video" />
-                                        
                                         <label>data: `+message[0][i].DTAtualizacao+`</label>
                                         <button onclick="acoes.metodos.removeAnuncios('anuncio_`+message[0][i].ID+`', '`+message[0][i].ID+`')"> Remover </button>
                                         <button onclick="acoes.metodos.updateAnuncios('anuncio_`+message[0][i].ID+`')"> Salvar </button>                                    
@@ -847,7 +806,7 @@ define(['app'], function (app) {
 
                     $.getJSON('estados_cidades.json', function (data) {
                             var items = [];
-                            var options = '<option value="">Selecione o estado</option>';	
+                            var options = '<option value="">Selecione o Estado</option>';	
                             $.each(data, function (key, val) {
                                 options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
                             });					
@@ -907,7 +866,7 @@ $.validator.addMethod(
         var re = new RegExp(regexp);
         return this.optional(element) || re.test(value);
     },
-    "Please check your input."
+    "Verifique a informacao no campo."
 );
 /**********************************************
  *
@@ -1024,11 +983,11 @@ acoes.metodos = {
     updateAnuncios: function(value){
         let IDAnuncio = value.replace('anuncio_', '');
         let IDTitle   = $('#'+value+' #tituloAnuncio').val();
+        let IDTextoAnuncio  = $('#'+value+' #textoAnuncio').val();
         let IDTipoAnuncio= $('#'+value+' #tipoAnuncio').val();
         let IDEstados  = $('#'+value+' #estados').val();
         let IDCidades  = $('#'+value+' #cidades').val();
         let IDRegiaoAnuncio  = $('#'+value+' #regiaoAnuncio').val();
-        let IDTextoAnuncio  = $('#'+value+' #textoAnuncio').val();
         
         client.emit('updateAnuncio', { id: IDAnuncio, 
             tituloAnuncio: IDTitle, 
@@ -1309,7 +1268,7 @@ acoes.metodos = {
         });    
     },
     validaFormAnuncio: function(){
-        let validator = $("#myForm3").validate({ 
+        let validator = $("#formANUNCIO").validate({ 
             rules: {
                 titulo: {
                     required : true
@@ -1335,25 +1294,25 @@ acoes.metodos = {
             },
             messages: {
                 titulo: {
-                    required: "Preencha com seu CEP"
+                    required: "PREENCHA O TITULO DO ANÚNCIO"
                 },
                 tipoAnuncio: {
-                    required: "Preencha seu Endereço"
+                    required: "SELECIONE O TIPO DO ANÚNCIO"
                 },
                 estados: {
-                    required: "Preencha seu Estado"
+                    required: "SELECIONE ESTADO DO ANÚNCIO"
                 },
                 cidades: {
-                    required: "Preencha com sua Cidade"
+                    required: "SELECIONE A CIDADE DO ANÚNCIO"
                 },
                 regiaoAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "SELECIONE A REGIAO DO ANÚNCIO"
                 },
                 textoAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "DIGITE A DESCRICAO DO ANÚNCIO"
                 },
                 myFileAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "ESCOLHA UMA IMAGEM PARA O ANÚNCIO"
                 },
             },
             submitHandler: function (form) {
@@ -1373,7 +1332,7 @@ acoes.metodos = {
         });
     },
     validaFormFotoPerfil: function(){
-        let validator = $("#myForm").validate({
+        let validator = $("#formFoto").validate({
             rules: {
                 myFile: {
                     required : true
@@ -1521,7 +1480,7 @@ function slugify(string) {
 function montaEstadoCidade(id, estado, cidade:string){
     $.getJSON('estados_cidades.json', function (data) {
         let items = [];
-        var options = '<option value="">Selecione o estado</option>';	
+        var options = '<option value="">Selecione o Estado</option>';	
         $.each(data, function (key, val) {
             options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
         });					

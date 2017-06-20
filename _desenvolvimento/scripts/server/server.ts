@@ -81,32 +81,6 @@
     let currentdate = formatDateToString(d);
 
     var often = require('often');
-/**********************************************
- *
- * SOCKET.IO
- * 
-**********************************************/
-
-// function statusCallback(error, result, latency) {
-//     console.log('Current latency %j, result %j, error %j', latency, result, error);
-//     console.log('----');
-//     console.log('Request elapsed milliseconds: ', result.requestElapsed);
-//     console.log('Request index: ', result.requestIndex);
-//     console.log('Request loadtest() instance index: ', result.instanceIndex);
-// }
- 
-// var options = {
-//     url: 'http://localhost:3001/appPertube/editar/6532165647329',
-//     maxRequests: 1000,
-//     statusCallback: statusCallback
-// };
- 
-// loadtest.loadTest(options, function(error) {
-//     if (error) {
-//         return console.error('Got an error: %s', error);
-//     }
-//     console.log('Tests run successfully');
-// });
 
 
 io.sockets.on('connection', function (socket) {
@@ -314,9 +288,9 @@ io.sockets.on('connection', function (socket) {
             del(['content/sounds/'+pasta+'/'+img], function(_err) {});
         }         
 
-        conn.app_pertube.query('CALL MUSICA("'+titulo+'","'+artista+'","'+genero+'","content/sounds/'+pasta+'/thumbs/'+imageAudio+'.png","content/sounds/'+pasta+'/'+imageAudio+'.mp3", '+usuario+')', function (_err, result50, _fields){
+        conn.app_pertube.query('CALL MUSICA("'+titulo+'","'+artista+'","'+genero+'","content/sounds/'+pasta+'/thumbs/'+imageAudio+'.png","content/sounds/'+pasta+'/'+imageAudio+'.mp3", '+usuario+')', function (_err, resultMusica, _fields){
             try {
-                if(!result50){
+                if(!resultMusica){
                     io.emit('retornoFileMusic', 1);  
                 }
                 else{                    
@@ -329,7 +303,7 @@ io.sockets.on('connection', function (socket) {
                     });
                     
                     setTimeout(function(){
-                        io.emit('retornoFileMusic', result50);
+                        io.emit('retornoFileMusic', resultMusica);
                     }, 1000);                    
                 }                                              
             } 
@@ -381,10 +355,10 @@ io.sockets.on('connection', function (socket) {
             WHERE
                 IDSocket = "`+data.userlogado+`"`, function (_err, resultFile, _fields){ 
                 setTimeout(function(){
-                    conn.app_pertube.query('CALL REMOVEMUSICAS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _result50, _fields){
+                    conn.app_pertube.query('CALL REMOVEMUSICAS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _resultMusica, _fields){
                         try
                         {
-                            callback('deu');
+                            callback('Concluido com sucesso !');
                         }
                         catch(error)
                         {
@@ -401,10 +375,10 @@ io.sockets.on('connection', function (socket) {
                 TituloMusica = "`+data.title+`",
                 Artista = "`+data.artista+`", 
                 Genero = "`+data.genero+`" 
-                WHERE ID = `+data.id, function (_err, _result50, _fields){
+                WHERE ID = `+data.id, function (_err, _resultMusica, _fields){
                 try
                 {
-                    callback('deu');
+                    callback('Concluido com sucesso !');
                 }
                 catch(error)
                 {
@@ -429,15 +403,15 @@ io.sockets.on('connection', function (socket) {
                 conn.app_pertube.query(`SELECT COUNT(a.ID) as qtd from videos a WHERE a.IDUsuarios = `+resultFile[0].IDUsuarios, function (_err, resultFileVideos, _fields){
                     if(resultFileVideos[0].qtd < 20){
                         setTimeout(function(){
-                            conn.app_pertube.query('CALL VIDEOS("' + data.title + '", "' + data.url + '", '+resultFile[0].IDUsuarios+')', function (_err, result50, _fields){
+                            conn.app_pertube.query('CALL VIDEOS("' + data.title + '", "' + data.url + '", '+resultFile[0].IDUsuarios+')', function (_err, resultMusica, _fields){
                                 try
                                 {                                    
-                                    if(result50[0][0].Retorno === 0){
+                                    if(resultMusica[0][0].Retorno === 0){
                                         callback('0');
                                     }   
                                     else
                                     {
-                                        callback(result50);
+                                        callback(resultMusica);
                                     }                            
                                 }
                                 catch(error)
@@ -463,10 +437,10 @@ io.sockets.on('connection', function (socket) {
             WHERE
                 IDSocket = "`+data.userlogado+`"`, function (_err, resultFile, _fields){ 
                 setTimeout(function(){
-                    conn.app_pertube.query('CALL REMOVEVIDEOS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _result50, _fields){
+                    conn.app_pertube.query('CALL REMOVEVIDEOS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _resultMusica, _fields){
                         try
                         {
-                            callback('deu');
+                            callback('Concluido com sucesso !');
                         }
                         catch(error)
                         {
@@ -479,10 +453,10 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('updateVideo', function (data, callback){
         setTimeout(function(){
-            conn.app_pertube.query('UPDATE videos SET TituloVideo = "'+data.title+'" WHERE ID = '+data.id, function (_err, _result50, _fields){
+            conn.app_pertube.query('UPDATE videos SET TituloVideo = "'+data.title+'" WHERE ID = '+data.id, function (_err, _resultMusica, _fields){
                 try
                 {
-                    callback('deu');
+                    callback('Concluido com sucesso !');
                 }
                 catch(error)
                 {
@@ -512,9 +486,9 @@ io.sockets.on('connection', function (socket) {
             "`+regiaoAnuncio+`",
             "content/images/`+pasta+`/anuncio/`+imageAnuncio+`.jpg",
             "`+textoAnuncio+`",
-            `+usuario+`)`, function (err, result50, _fields){
+            `+usuario+`)`, function (err, resultMusica, _fields){
                 
-                io.emit('retornoAnuncio', result50);
+                io.emit('retornoAnuncio', resultMusica);
                 
                 fs.writeFile('content/images/'+pasta+'/anuncio/'+imageAnuncio+'.jpg', inputFile, 'binary', function (err) {
                     if (err) console.log(err);
@@ -550,10 +524,10 @@ io.sockets.on('connection', function (socket) {
             WHERE
                 IDSocket = "`+data.userlogado+`"`, function (_err, resultFile, _fields){ 
                 setTimeout(function(){
-                    conn.app_pertube.query('CALL REMOVEANUNCIOS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _result50, _fields){
+                    conn.app_pertube.query('CALL REMOVEANUNCIOS("' + data.id + '", '+resultFile[0].IDUsuarios+')', function (_err, _resultMusica, _fields){
                         try
                         {
-                            callback('deu');
+                            callback('Concluido com sucesso !');
                         }
                         catch(error)
                         {
@@ -576,10 +550,10 @@ io.sockets.on('connection', function (socket) {
                 Regiao = "`+data.regiaoAnuncio+`",
                 TextoAnuncio = "`+data.textoAnuncio+`",
                 DTAtualizacao = "`+currentdate+`"
-                WHERE ID = `+data.id, function (_err, _result50, _fields){
+                WHERE ID = `+data.id, function (_err, _resultMusica, _fields){
                 try
                 {
-                    callback('deu');
+                    callback('Concluido com sucesso !');
                 }
                 catch(error)
                 {
@@ -635,10 +609,10 @@ io.sockets.on('connection', function (socket) {
         },1000);
     });
     socket.on('ouvirRadio', function (data, callback) {
-        conn.app_pertube.query('CALL RADIO("' + data.userName + '")', function (_err, result50, _fields){
+        conn.app_pertube.query('CALL RADIO("' + data.userName + '")', function (_err, resultMusica, _fields){
             try
             {                
-                socket.emit('recebe_radio', result50, data.tipo);                        
+                socket.emit('recebe_radio', resultMusica, data.tipo);                        
             }
             catch(error)
             {

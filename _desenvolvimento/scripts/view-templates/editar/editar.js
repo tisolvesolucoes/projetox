@@ -26,7 +26,7 @@ define(['app'], function (app) {
                     dadosPessoais += "<input type='password' name='senha' id='senha' value='" + message[0][0].Senha + "' />";
                     dadosPessoais += "</label>";
                     dadosPessoais;
-                    dadosPessoais += "<label> Aniverário";
+                    dadosPessoais += "<label> Aniversário";
                     dadosPessoais += "<select name='dia' id='dia'>";
                     dadosPessoais += "<option value='0' selected='1'>Dia</option>";
                     for (var i = 1; i < 32; i++) {
@@ -136,7 +136,7 @@ define(['app'], function (app) {
                     $.template("PerfilTemplate_6", instrumentosQuetoco);
                     conteudoInstrumentosQuetoco = $.tmpl("PerfilTemplate_6");
                     estilosQueCurto = "<form id='formESTILOSMUSICAIS'>";
-                    estilosQueCurto += "<label> Estilos musicias que curto";
+                    estilosQueCurto += "<label> Estilos musicas que curto";
                     estilosQueCurto += "<select multiple>";
                     estilosQueCurto += "</select>";
                     estilosQueCurto += "</label>";
@@ -144,18 +144,18 @@ define(['app'], function (app) {
                     estilosQueCurto += "</form>";
                     $.template("PerfilTemplate_7", estilosQueCurto);
                     conteudoEstilosQueCurto = $.tmpl("PerfilTemplate_7");
-                    fotoPerfi = '<form id="myForm" name="myForm" enctype="multipart/form-data" method="post" onsubmit="return false" >';
+                    fotoPerfi = '<form id="formFoto" name="formFoto" enctype="multipart/form-data" method="post" onsubmit="return false" >';
                     fotoPerfi += '<input type="hidden" id="pasta" value="' + message[0][0].PastasUsuario + '" />';
                     fotoPerfi += '<input type="file" name="myFile" id="myFile" accept=".png, .jpg, .jpeg"/>';
-                    fotoPerfi += '<input type="submit" id="myButton" disabled value="Upload Image" name="submit">';
+                    fotoPerfi += '<input type="submit" id="btnformFOTOPERFIL" disabled value="Upload Image" name="submit">';
                     fotoPerfi += '<span id="status"></span>';
                     fotoPerfi += '</form>';
                     $.template("PerfilTemplate_8", fotoPerfi);
                     conteudoFotoPerfi = $.tmpl("PerfilTemplate_8");
-                    musicaPerfil = '<form id="myForm1" name="myForm1" enctype="multipart/form-data" method="post" onsubmit="return false" >';
+                    musicaPerfil = '<form id="formMUSICA" name="formMUSICA" enctype="multipart/form-data" method="post" onsubmit="return false" >';
                     musicaPerfil += '<input type="text" id="pasta1" value="' + message[0][0].PastasUsuario + '" />';
                     musicaPerfil += '<input type="file" name="myFileMusic" id="myFileMusic" accept=".mp3"/>';
-                    musicaPerfil += '<input type="submit" id="myButton1" value="Upload Musica" name="myButton1">';
+                    musicaPerfil += '<input type="submit" id="btnformMUSICA" value="Upload Musica" name="btnformMUSICA">';
                     musicaPerfil += '<span id="statusMusica"></span>';
                     musicaPerfil += '</form>';
                     musicaPerfil += '<div class="ContentMusicas" id="ContentMusicas" style="display: block !important">';
@@ -163,10 +163,10 @@ define(['app'], function (app) {
                     musicaPerfil += '</div>';
                     $.template("PerfilTemplate_9", musicaPerfil);
                     conteudoMusicaPerfi = $.tmpl("PerfilTemplate_9");
-                    videoPerfil = '<form id="myForm2" name="myForm2" onsubmit="return false">';
+                    videoPerfil = '<form id="formVIDEO" name="formVIDEO" onsubmit="return false">';
                     videoPerfil += '<input type="text" name="myFileTitle" id="myFileTitle" placeholder="Titulo do video" />';
                     videoPerfil += '<input type="text" name="myFileVideo" id="myFileVideo" placeholder="Embed Youtube" />';
-                    videoPerfil += '<input type="submit" id="myButton2" value="Upload Video" name="submit">';
+                    videoPerfil += '<input type="submit" id="btnformVIDEO" value="Upload Video" name="submit">';
                     videoPerfil += '<span id="status"></span>';
                     videoPerfil += '</form>';
                     videoPerfil += '<div class="ContentVideos" id="ContentVideos" style="display: block !important">';
@@ -175,9 +175,10 @@ define(['app'], function (app) {
                     videoPerfil += '</div>';
                     $.template("PerfilTemplate_10", videoPerfil);
                     conteudoVideoPerfi = $.tmpl("PerfilTemplate_10");
-                    anuncioPerfil = '<form id="myForm3" name="myForm3" enctype="multipart/form-data" method="post" onsubmit="return false">';
+                    anuncioPerfil = '<form id="formANUNCIO" name="formANUNCIO" enctype="multipart/form-data" method="post" onsubmit="return false">';
                     anuncioPerfil += '<input type="hidden" id="pastaAnuncios" value="' + message[0][0].PastasUsuario + '" />';
                     anuncioPerfil += '<input type="text" name="tituloAnuncio" id="tituloAnuncio" value="" placeholder="Digite o titulo do anuncio" />';
+                    anuncioPerfil += '<textarea name="textoAnuncio" id="textoAnuncio" value="" placeholder="Digite uma descrição do anúncio"></textarea>';
                     anuncioPerfil += '<select type="text" name="tipoAnuncio" id="tipoAnuncio">';
                     anuncioPerfil += '<option value="" class="valid">Selecione o tipo de Anúncio</option>';
                     $.each(message[11], function (key, value) {
@@ -194,9 +195,8 @@ define(['app'], function (app) {
                     anuncioPerfil += '<option value="região oeste">região oeste</option>';
                     anuncioPerfil += '<option value="região central">região central</option>';
                     anuncioPerfil += '</select>';
-                    anuncioPerfil += '<textarea name="textoAnuncio" id="textoAnuncio" value="" placeholder="Digite o titulo do anuncio"></textarea>';
                     anuncioPerfil += '<input type="file" id="myFileAnuncio" name="myFileAnuncio" multiple/>';
-                    anuncioPerfil += '<input type="submit" value="Upload Video" name="myButton3" id="myButton3">';
+                    anuncioPerfil += '<input type="submit" value="Upload Video" name="btnformVIDEO" id="btnformVIDEO">';
                     anuncioPerfil += '<span id="status"></span>';
                     anuncioPerfil += '</form>';
                     anuncioPerfil += '<div class="ContentAnunciosLista" id="ContentAnunciosLista" style="display: block"></div>';
@@ -233,7 +233,7 @@ define(['app'], function (app) {
                     $('#mainAnuncios').html(contentAnuncio);
                     for (var x = 0; x < message[12].length; x++) {
                         montaEstadoCidade(message[12][x].ID, message[12][x].Estado, message[12][x].Cidade);
-                        anuncioPerfilList = "<div id=\"anuncio_" + message[12][x].ID + "\" style=\"display: block !important\">\n                                    \n                                    <img src=\"" + message[12][x].URLs + "\" width=\"100\" /> \n                                   \n                                    <input type=\"text\" id=\"tituloAnuncio\" value=\"" + message[12][x].TitiloAnuncio + "\" placeholder=\"Digite o titulo do video\" />                                   \n                                    \n                                    <select id=\"tipoAnuncio\"></select>\n                                    \n                                    <select id=\"estados\" class=\"estados_" + message[12][x].ID + "\"></select>\n                                    <select id=\"cidades\" class=\"cidades_" + message[12][x].ID + "\"></select>\n                                    <select id=\"regiaoAnuncio\">\n                                        <option value=\"\">Selecione a regi\u00E3o</option>\n                                        <option value=\"regi\u00E3o norte\">regi\u00E3o norte</option>\n                                        <option value=\"regi\u00E3o sul\">regi\u00E3o sul</option>\n                                        <option value=\"regi\u00E3o leste\">regi\u00E3o leste</option>\n                                        <option value=\"regi\u00E3o oeste\">regi\u00E3o oeste</option>\n                                        <option value=\"regi\u00E3o central\">regi\u00E3o central</option>\n                                    </select>\n                                    <input type=\"text\" id=\"textoAnuncio\" value=\"" + message[12][x].TextoAnuncio + "\" placeholder=\"Digite o titulo do video\" />\n\n                                    <input type=\"text\" id=\"Criacao\" value=\"" + message[12][x].DTCriacao + "\" placeholder=\"Digite o titulo do video\" />\n                                    <label>data: " + message[12][x].DTAtualizacao + "</label>\n\n                                    <button onclick=\"acoes.metodos.removeAnuncios('anuncio_" + message[12][x].ID + "', '" + message[12][x].URLVideo + "')\"> Remover </button>\n                                    <button onclick=\"acoes.metodos.updateAnuncios('anuncio_" + message[12][x].ID + "')\"> Salvar </button>                                    \n                                </div>";
+                        anuncioPerfilList = "<div id=\"anuncio_" + message[12][x].ID + "\" style=\"display: block !important\">\n                                    \n                                    <img src=\"" + message[12][x].URLs + "\" width=\"100\" /> \n                                   \n                                    <input type=\"text\" id=\"tituloAnuncio\" value=\"" + message[12][x].TitiloAnuncio + "\" placeholder=\"Digite o titulo do anuncio\" />                                   \n                                    <input type=\"text\" id=\"textoAnuncio\" value=\"" + message[12][x].TextoAnuncio + "\" placeholder=\"Digite descri\u00E7\u00E3o do anuncio\" />\n\n                                    <select id=\"tipoAnuncio\"></select>\n                                    \n                                    <select id=\"estados\" class=\"estados_" + message[12][x].ID + "\"></select>\n                                    <select id=\"cidades\" class=\"cidades_" + message[12][x].ID + "\"></select>\n                                    <select id=\"regiaoAnuncio\">\n                                        <option value=\"\">Selecione a regi\u00E3o</option>\n                                        <option value=\"regi\u00E3o norte\">regi\u00E3o norte</option>\n                                        <option value=\"regi\u00E3o sul\">regi\u00E3o sul</option>\n                                        <option value=\"regi\u00E3o leste\">regi\u00E3o leste</option>\n                                        <option value=\"regi\u00E3o oeste\">regi\u00E3o oeste</option>\n                                        <option value=\"regi\u00E3o central\">regi\u00E3o central</option>\n                                    </select>\n\n                                    <label>Data Criac\u00E3o: " + message[12][x].DTAtualizacao + "</label>\n                                    <input type=\"text\" id=\"Criacao\" value=\"" + message[12][x].DTCriacao + "\" />\n                                    <button onclick=\"acoes.metodos.removeAnuncios('anuncio_" + message[12][x].ID + "', '" + message[12][x].URLVideo + "')\"> Remover </button>\n                                    <button onclick=\"acoes.metodos.updateAnuncios('anuncio_" + message[12][x].ID + "')\"> Salvar </button>                                    \n                                </div>";
                         $('#ContentAnunciosLista').append(anuncioPerfilList);
                         $.each(message[11], function (key, value) {
                             $('#anuncio_' + message[12][x].ID + ' #tipoAnuncio').append('<option value="' + value.ID + '">' + value.Anuncios + '</option>');
@@ -369,22 +369,22 @@ define(['app'], function (app) {
                     alert('Acesso negado!');
                     $scope.$apply($location.path('/home'));
                 }
-                $('#myButton').on('click', function () {
+                $('#btnformFOTOPERFIL').on('click', function () {
                     var uploadFotoPerfil = document.getElementById('myFile').files[0];
                     var pasta = $('#pasta').val();
                     var pic_size = uploadFotoPerfil.size;
                     acoes.metodos.validaFormFotoPerfil(uploadFotoPerfil);
-                    $('#myForm #status').html('carregando..');
-                    if ($('#myForm').valid()) {
+                    $('#formFoto #status').html('carregando..');
+                    if ($('#formFoto').valid()) {
                         if (pic_size >= 10000000) {
                             alert('grande');
                             $('#status').html('');
                             $('#myFile').val('');
-                            $('#myButton').prop('disabled', true);
+                            $('#btnformFOTOPERFIL').prop('disabled', true);
                         }
                         else {
                             client.emit('envia_foto_perfil', { pasta: pasta, imagem: uploadFotoPerfil, userlogado: $.jStorage.get("key") }, function (message, key) { });
-                            $('#myButton').prop('disabled', true);
+                            $('#btnformFOTOPERFIL').prop('disabled', true);
                         }
                     }
                 });
@@ -394,23 +394,23 @@ define(['app'], function (app) {
                             alert(message);
                             $('#status').html('');
                             $('#myFile').val('');
-                            $('#myButton').prop('disabled', true);
+                            $('#btnformFOTOPERFIL').prop('disabled', true);
                         }
                         else {
                             $('#status').html('');
                             $('#myFile').val('');
-                            $('#myButton').prop('disabled', true);
+                            $('#btnformFOTOPERFIL').prop('disabled', true);
                             $('#imagePerfil').attr('src', message);
                         }
                     }, 1500);
                 });
                 $('#myFile').change(function () {
-                    $('#myButton').prop('disabled', false);
+                    $('#btnformFOTOPERFIL').prop('disabled', false);
                 });
-                $('#myButton1').on('click', function () {
+                $('#btnformMUSICA').on('click', function () {
                     var input = $('#myFileMusic').val();
                     if (input != '') {
-                        var form = document.forms.namedItem("myForm1");
+                        var form = document.forms.namedItem("formMUSICA");
                         var pasta = $('#pasta1').val();
                         var audio = document.getElementById('myFileMusic').files[0];
                         $('#statusMusica').html('Carregando...');
@@ -439,7 +439,7 @@ define(['app'], function (app) {
                         $('#ContentMusicasLista').append("<div id=\"Musica_" + message[0][0].ID + "\" style=\"display: block !important\">\n                                    <a href=\"javascript:;\" rel=\"" + message[0][0].URLMusica + "\"> \n                                        <img src=\"" + message[0][0].Imagem + "\" /> \n                                    </a>\n                                    <input type=\"text\" id=\"titulo\" value=\"" + message[0][0].TituloMusica + "\" placeholder=\"Digite o titulo da musica\" />\n                                    <input type=\"text\" id=\"artista\" value=\"" + message[0][0].Artista + "\" placeholder=\"Digite o Artista\" />\n                                    <input type=\"text\" id=\"genero\" value=\"" + message[0][0].Genero + "\" placeholder=\"Digite o Genero\" />\n                                    <button onclick=\"acoes.metodos.removeMusicas('Musica_" + message[0][0].ID + "', '" + message[0][0].URLMusica + "')\"> Remover </button>\n                                    <button onclick=\"acoes.metodos.updateMusicas('Musica_" + message[0][0].ID + "')\"> Salvar </button>                                    \n                                </div>");
                     }
                 });
-                $('#myForm2').submit(function (event) {
+                $('#formVIDEO').submit(function (event) {
                     var inputTitle = $('#myFileTitle').val();
                     var inputVideos = $('#myFileVideo').val();
                     inputVideos = inputVideos.split('&')[0];
@@ -471,16 +471,16 @@ define(['app'], function (app) {
                     event.preventDefault();
                 });
                 var uploadAnuncio_1;
-                $('#myButton3').click(function () {
+                $('#btnformVIDEO').click(function () {
                     uploadAnuncio_1 = document.getElementById('myFileAnuncio').files[0];
                     acoes.metodos.validaFormAnuncio(uploadAnuncio_1);
-                    if ($('#myForm3').valid()) {
+                    if ($('#formANUNCIO').valid()) {
                         var frm_titulo = $("#tituloAnuncio").val();
+                        var frm_textoAnuncio = $("#textoAnuncio").val();
                         var frm_tipoAnuncio = $("#tipoAnuncio").val();
                         var frm_estados = $("#estados").val();
                         var frm_cidades = $("#cidades").val();
                         var frm_regiaoAnuncio = $("#regiaoAnuncio").val();
-                        var frm_textoAnuncio = $("#textoAnuncio").val();
                         var frm_pasta = $('#pastaAnuncios').val();
                         client.emit('anuncios', {
                             titulo: frm_titulo,
@@ -494,13 +494,13 @@ define(['app'], function (app) {
                             inputFile: uploadAnuncio_1
                         }, function (eventName, message, key) {
                             if (eventName === "success") {
-                                alert('deu certo');
+                                alert('CONCLUIDO COM SUCESSO!');
                             }
                             else if (eventName === '1') {
                                 alert(message);
                             }
                             else {
-                                alert('deu ruim');
+                                alert('ERRO!');
                             }
                         });
                     }
@@ -514,7 +514,7 @@ define(['app'], function (app) {
                         setTimeout(function () {
                             for (var i = 0; i < message[0].length; i++) {
                                 montaEstadoCidade(message[0][i].ID, message[0][i].Estado, message[0][i].Cidade);
-                                $('#ContentAnunciosLista').append("<div id=\"anuncio_" + message[0][i].ID + "\" style=\"display: block !important\">\n                                        <img src=\"" + message[0][i].URLs + "\" width=\"100\" />                                     \n                                        <input type=\"text\" id=\"tituloAnuncio\" value=\"" + message[0][i].TitiloAnuncio + "\" placeholder=\"Digite o titulo do video\" />\n                                        \n                                        <select id=\"tipoAnuncio\"></select>\n\n                                        <select id=\"estados\" class=\"estados_" + message[0][i].ID + "\"></select>\n                                        <select id=\"cidades\" class=\"cidades_" + message[0][i].ID + "\"></select>\n                                    \n                                        <select id=\"regiaoAnuncio\">\n                                            <option value=\"\">Selecione a regi\u00E3o</option>\n                                            <option value=\"regi\u00E3o norte\">regi\u00E3o norte</option>\n                                            <option value=\"regi\u00E3o sul\">regi\u00E3o sul</option>\n                                            <option value=\"regi\u00E3o leste\">regi\u00E3o leste</option>\n                                            <option value=\"regi\u00E3o oeste\">regi\u00E3o oeste</option>\n                                            <option value=\"regi\u00E3o central\">regi\u00E3o central</option>\n                                        </select>\n\n                                        <input type=\"text\" id=\"textoAnuncio\" value=\"" + message[0][i].TextoAnuncio + "\" placeholder=\"Digite o titulo do video\" />\n                                        \n                                        <label>data: " + message[0][i].DTAtualizacao + "</label>\n                                        <button onclick=\"acoes.metodos.removeAnuncios('anuncio_" + message[0][i].ID + "', '" + message[0][i].ID + "')\"> Remover </button>\n                                        <button onclick=\"acoes.metodos.updateAnuncios('anuncio_" + message[0][i].ID + "')\"> Salvar </button>                                    \n                                    </div>");
+                                $('#ContentAnunciosLista').append("<div id=\"anuncio_" + message[0][i].ID + "\" style=\"display: block !important\">\n                                        <img src=\"" + message[0][i].URLs + "\" width=\"100\" />                                     \n                                        <input type=\"text\" id=\"tituloAnuncio\" value=\"" + message[0][i].TitiloAnuncio + "\" placeholder=\"Digite o titulo do anuncio\" />\n\n                                        <input type=\"text\" id=\"textoAnuncio\" value=\"" + message[0][i].TextoAnuncio + "\" placeholder=\"Digite descricao do anuncio\" />\n                                                                                \n                                        <select id=\"tipoAnuncio\"></select>\n\n                                        <select id=\"estados\" class=\"estados_" + message[0][i].ID + "\"></select>\n                                        <select id=\"cidades\" class=\"cidades_" + message[0][i].ID + "\"></select>\n                                    \n                                        <select id=\"regiaoAnuncio\">\n                                            <option value=\"\">Selecione a regi\u00E3o</option>\n                                            <option value=\"regi\u00E3o norte\">regi\u00E3o norte</option>\n                                            <option value=\"regi\u00E3o sul\">regi\u00E3o sul</option>\n                                            <option value=\"regi\u00E3o leste\">regi\u00E3o leste</option>\n                                            <option value=\"regi\u00E3o oeste\">regi\u00E3o oeste</option>\n                                            <option value=\"regi\u00E3o central\">regi\u00E3o central</option>\n                                        </select>\n\n                                        <label>data: " + message[0][i].DTAtualizacao + "</label>\n                                        <button onclick=\"acoes.metodos.removeAnuncios('anuncio_" + message[0][i].ID + "', '" + message[0][i].ID + "')\"> Remover </button>\n                                        <button onclick=\"acoes.metodos.updateAnuncios('anuncio_" + message[0][i].ID + "')\"> Salvar </button>                                    \n                                    </div>");
                                 $.each(message[1], function (key, value) {
                                     $('#anuncio_' + message[0][i].ID + ' #tipoAnuncio').append('<option value="' + value.ID + '">' + value.Anuncios + '</option>');
                                 });
@@ -527,7 +527,7 @@ define(['app'], function (app) {
                 });
                 $.getJSON('estados_cidades.json', function (data) {
                     var items = [];
-                    var options = '<option value="">Selecione o estado</option>';
+                    var options = '<option value="">Selecione o Estado</option>';
                     $.each(data, function (key, val) {
                         options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
                     });
@@ -569,7 +569,7 @@ define(['app'], function (app) {
 $.validator.addMethod("regex", function (value, element, regexp) {
     var re = new RegExp(regexp);
     return this.optional(element) || re.test(value);
-}, "Please check your input.");
+}, "Verifique a informacao no campo.");
 acoes.metodos = {
     adiciona: function (valor, tipo, inputs) {
         var inputsss, resultadoInputs, i, resultado;
@@ -651,11 +651,11 @@ acoes.metodos = {
     updateAnuncios: function (value) {
         var IDAnuncio = value.replace('anuncio_', '');
         var IDTitle = $('#' + value + ' #tituloAnuncio').val();
+        var IDTextoAnuncio = $('#' + value + ' #textoAnuncio').val();
         var IDTipoAnuncio = $('#' + value + ' #tipoAnuncio').val();
         var IDEstados = $('#' + value + ' #estados').val();
         var IDCidades = $('#' + value + ' #cidades').val();
         var IDRegiaoAnuncio = $('#' + value + ' #regiaoAnuncio').val();
-        var IDTextoAnuncio = $('#' + value + ' #textoAnuncio').val();
         client.emit('updateAnuncio', { id: IDAnuncio,
             tituloAnuncio: IDTitle,
             tipoAnuncio: IDTipoAnuncio,
@@ -916,7 +916,7 @@ acoes.metodos = {
         });
     },
     validaFormAnuncio: function () {
-        var validator = $("#myForm3").validate({
+        var validator = $("#formANUNCIO").validate({
             rules: {
                 titulo: {
                     required: true
@@ -942,25 +942,25 @@ acoes.metodos = {
             },
             messages: {
                 titulo: {
-                    required: "Preencha com seu CEP"
+                    required: "PREENCHA O TITULO DO ANÚNCIO"
                 },
                 tipoAnuncio: {
-                    required: "Preencha seu Endereço"
+                    required: "SELECIONE O TIPO DO ANÚNCIO"
                 },
                 estados: {
-                    required: "Preencha seu Estado"
+                    required: "SELECIONE ESTADO DO ANÚNCIO"
                 },
                 cidades: {
-                    required: "Preencha com sua Cidade"
+                    required: "SELECIONE A CIDADE DO ANÚNCIO"
                 },
                 regiaoAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "SELECIONE A REGIAO DO ANÚNCIO"
                 },
                 textoAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "DIGITE A DESCRICAO DO ANÚNCIO"
                 },
                 myFileAnuncio: {
-                    required: "Digite seu Bairro"
+                    required: "ESCOLHA UMA IMAGEM PARA O ANÚNCIO"
                 },
             },
             submitHandler: function (form) {
@@ -979,7 +979,7 @@ acoes.metodos = {
         });
     },
     validaFormFotoPerfil: function () {
-        var validator = $("#myForm").validate({
+        var validator = $("#formFoto").validate({
             rules: {
                 myFile: {
                     required: true
@@ -1117,7 +1117,7 @@ function slugify(string) {
 function montaEstadoCidade(id, estado, cidade) {
     $.getJSON('estados_cidades.json', function (data) {
         var items = [];
-        var options = '<option value="">Selecione o estado</option>';
+        var options = '<option value="">Selecione o Estado</option>';
         $.each(data, function (key, val) {
             options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
         });
